@@ -5,7 +5,6 @@
  */
 package ModeloUML;
 
-import java.util.*;
 
 /**
  *
@@ -13,18 +12,11 @@ import java.util.*;
  */
 public class Abogado extends Persona{
 
-    private ArrayList<Caso> listaCasos;
+    public Abogado() {
+    }
     
     public Abogado(String DNI, String Nombre, String Apellidos, String Direccion) {
         super(DNI, Nombre, Apellidos, Direccion);
     }
 
-    public ArrayList<Caso> getListaCasos() {
-        return listaCasos;
-    }
-
-    public void setListaCasos(ArrayList<Caso> listaCasos) {
-        this.listaCasos = listaCasos;
-    }
-    
 }

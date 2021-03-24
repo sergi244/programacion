@@ -5,6 +5,8 @@
  */
 package ModeloUML;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author 1gdaw03
@@ -15,6 +17,7 @@ public class Persona {
     private String Nombre;
     private String Apellidos;
     private String Direccion;
+    private ArrayList<Caso> listaCasos;
 
     public Persona() {
     }
@@ -24,6 +27,7 @@ public class Persona {
         this.Nombre = Nombre;
         this.Apellidos = Apellidos;
         this.Direccion = Direccion;
+        this.listaCasos = new ArrayList();
     }
 
     public String getDNI() {
@@ -56,6 +60,20 @@ public class Persona {
 
     public void setDireccion(String Direccion) {
         this.Direccion = Direccion;
+    }
+
+    public ArrayList<Caso> getListaCasos() {
+        return listaCasos;
+    }
+
+    public void setCaso(Caso c){
+        if (listaCasos == null)
+            listaCasos = new ArrayList();
+        this.listaCasos.add(c);
+    }
+    
+    public void setListaCasos(ArrayList<Caso> listaCasos) {
+        this.listaCasos = listaCasos;
     }
     
 }
