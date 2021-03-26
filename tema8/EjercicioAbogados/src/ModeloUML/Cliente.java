@@ -12,12 +12,15 @@ package ModeloUML;
 public class Cliente extends Persona{
     
     private String Telefono;
-    private String email;
+    private String Email;
 
-    public Cliente(String Telefono, String email, String DNI, String Nombre, String Apellidos, String Direccion) {
+    public Cliente(String DNI, String Nombre, String Apellidos, String Direccion, String Telefono, String Email) {
         super(DNI, Nombre, Apellidos, Direccion);
         this.Telefono = Telefono;
-        this.email = email;
+        this.Email = Email;
+    }
+
+    public Cliente() {
     }
 
     public String getTelefono() {
@@ -29,11 +32,11 @@ public class Cliente extends Persona{
     }
 
     public String getEmail() {
-        return email;
+        return Email;
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        this.Email = email;
     }
     
 }

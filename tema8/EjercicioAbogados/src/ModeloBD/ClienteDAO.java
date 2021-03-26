@@ -15,8 +15,52 @@ import java.sql.ResultSet;
  */
 public class ClienteDAO {
     
+    private static Cliente cliente;
+    
     private static PreparedStatement preparado;
     private static String plantilla;
     private static ResultSet resultado;
     
+    public static void nuevo(Cliente cl) throws Exception{
+        BaseDatos.conectar();
+        
+        plantilla = "INSERT INTO cliente VALUES (?,?,?,?,?,?)";
+            preparado = BaseDatos.getCon().prepareStatement(plantilla);
+            preparado.setString(1, cl.getDNI());
+            preparado.setString(2, cl.getNombre());
+            preparado.setString(3, cl.getApellidos());
+            preparado.setString(4, cl.getDireccion());
+            preparado.setString(5, cl.getTelefono());
+            preparado.setString(6, cl.getEmail());
+            
+            int n = preparado.executeUpdate();
+            System.out.println( n + " filas insertadas");
+    }
+    
+    public static void borrar(Cliente cl) throws Exception{
+        BaseDatos.conectar();
+        
+        plantilla = "DELETE FROM cliente VALUES (?,?,?,?,?,?)";
+            preparado = BaseDatos.getCon().prepareStatement(plantilla);
+            preparado.setString(1, cl.getDNI());
+            preparado.setString(2, cl.getNombre());
+            preparado.setString(3, cl.getApellidos());
+            preparado.setString(4, cl.getDireccion());
+            preparado.setString(5, cl.getTelefono());
+            preparado.setString(6, cl.getEmail());
+            
+            int n = preparado.executeUpdate();
+            System.out.println( n + " filas eliminadas");
+    }
+    
+    public static void crearObjeto() throws Exception
+    {
+        cliente = new Cliente();
+        cliente.setDNI(resultado.getString("DNI"));
+        cliente.setNombre(resultado.getString("nombre"));
+        cliente.setApellidos(resultado.getString("Apellidos"));             
+        cliente.setDireccion(resultado.getString("Direccion"));      
+        cliente.setTelefono(resultado.getString("Telefono"));
+        cliente.setEmail(resultado.getString("Email"));
+    }
 }

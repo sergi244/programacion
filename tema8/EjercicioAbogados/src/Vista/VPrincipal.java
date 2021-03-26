@@ -66,6 +66,11 @@ public class VPrincipal extends javax.swing.JDialog {
         jMenu1.add(miAltaCliente);
 
         miBajaCliente.setText("Baja");
+        miBajaCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miBajaClienteActionPerformed(evt);
+            }
+        });
         jMenu1.add(miBajaCliente);
 
         miModCliente.setText("Modificacion");
@@ -79,9 +84,19 @@ public class VPrincipal extends javax.swing.JDialog {
         jMenu2.setText("Abogado");
 
         miAltaAbogado.setText("Alta");
+        miAltaAbogado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miAltaAbogadoActionPerformed(evt);
+            }
+        });
         jMenu2.add(miAltaAbogado);
 
         miBajaAbogado.setText("Baja");
+        miBajaAbogado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miBajaAbogadoActionPerformed(evt);
+            }
+        });
         jMenu2.add(miBajaAbogado);
 
         miModAbogado.setText("Modificacion");
@@ -141,8 +156,20 @@ public class VPrincipal extends javax.swing.JDialog {
     }//GEN-LAST:event_miSalirActionPerformed
 
     private void miAltaClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miAltaClienteActionPerformed
-        Controlador.Alta();
+        Controlador.AltaCliente();
     }//GEN-LAST:event_miAltaClienteActionPerformed
+
+    private void miAltaAbogadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miAltaAbogadoActionPerformed
+        Controlador.AltaAbogado();
+    }//GEN-LAST:event_miAltaAbogadoActionPerformed
+
+    private void miBajaClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miBajaClienteActionPerformed
+        Controlador.BajaCliente();
+    }//GEN-LAST:event_miBajaClienteActionPerformed
+
+    private void miBajaAbogadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miBajaAbogadoActionPerformed
+        Controlador.BajaAbogado();
+    }//GEN-LAST:event_miBajaAbogadoActionPerformed
 
     /**
      * @param args the command line arguments
