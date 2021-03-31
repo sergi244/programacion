@@ -6,6 +6,7 @@
 package VistaCliente;
 
 import ejercicioabogados.Controlador;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -169,17 +170,28 @@ public class VBajaCliente extends javax.swing.JDialog {
         try{
           //if (datosCorrectos()){}
              
-             Controlador.guardarcliente(tfDNI.getText(), tfNombre.getText(), tfApellidos.getText(), tfDireccion.getText(), tfTelefono.getText(), tfEmail.getText());
+             Controlador.borrarcliente(tfDNI.getText());
              Controlador.volver(this);
              
            }
        
        catch(Exception e)
        {
-         javax.swing.JOptionPane.showMessageDialog(this,"Problemas con el alta "+e.getClass());
+         javax.swing.JOptionPane.showMessageDialog(this,"Problemas con la baja " + e.getClass());
        }
     }//GEN-LAST:event_bAceptarActionPerformed
 
+    public boolean mostrar(String datos)
+    {
+       // JOptionPane.showMessageDialog(this,datos);
+        int respuesta = JOptionPane.showConfirmDialog(this," Los datos del acontecimiento que vas a borrar son: \n" + datos + "\n ¿ Estas seguro? Los datos se eliminarán de forma permanente");
+        if (respuesta == 0)
+            return true;
+        else
+            return false;
+        // return respuesta == 0;
+    }
+    
     /**
      * @param args the command line arguments
      */

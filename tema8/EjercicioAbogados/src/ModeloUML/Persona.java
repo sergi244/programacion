@@ -75,5 +75,11 @@ public class Persona {
     public void setListaCasos(ArrayList<Caso> listaCasos) {
         this.listaCasos = listaCasos;
     }
+
+    @Override
+    public String toString() {
+        return "Persona{" + "DNI=" + DNI + ", Nombre=" + Nombre + ", Apellidos=" + Apellidos + ", Direccion=" + Direccion + ", listaCasos=" + listaCasos + '}';
+    }
+    
     
 }

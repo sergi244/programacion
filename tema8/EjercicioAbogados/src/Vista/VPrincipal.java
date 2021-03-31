@@ -6,6 +6,7 @@
 package Vista;
 
 import ejercicioabogados.Controlador;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -170,7 +171,7 @@ public class VPrincipal extends javax.swing.JDialog {
     private void miBajaAbogadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miBajaAbogadoActionPerformed
         Controlador.BajaAbogado();
     }//GEN-LAST:event_miBajaAbogadoActionPerformed
-
+    
     /**
      * @param args the command line arguments
      */

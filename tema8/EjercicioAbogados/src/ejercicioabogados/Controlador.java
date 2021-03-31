@@ -62,6 +62,13 @@ public class Controlador {
         ClienteDAO.nuevo(cliente);
     }
     
+    public static void borrarcliente(String DNI) throws Exception{
+        cliente = new Cliente(DNI);
+        cliente = ClienteDAO.consultar(cliente);
+        if (vbc.mostrar(cliente.toString()))
+            ClienteDAO.borrar(cliente);
+    }
+    
     public static void guardarabogado(String DNI, String Nombre, String Apellidos, String Direccion) throws Exception{
         abogado = new Abogado(DNI, Nombre, Apellidos, Direccion);
         AbogadoDAO.nuevo(abogado);

@@ -23,6 +23,10 @@ public class Cliente extends Persona{
     public Cliente() {
     }
 
+    public Cliente(String DNI) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public String getTelefono() {
         return Telefono;
     }
@@ -38,5 +42,14 @@ public class Cliente extends Persona{
     public void setEmail(String email) {
         this.Email = email;
     }
+
+    @Override
+    public String toString() {
+        return "Cliente{" + "Telefono=" + Telefono + ", Email=" + Email + '}';
+    }
+
+    
+    
+    
     
 }
